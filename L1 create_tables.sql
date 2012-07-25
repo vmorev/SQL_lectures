@@ -25,7 +25,8 @@ alter table JOBS add constraint JOB_TITLE_NN check ("JOB_TITLE" IS NOT NULL);
 create table DEPARTMENTS (
   DEPARTMENT_ID   NUMBER(4) not null,
   DEPARTMENT_NAME VARCHAR2(30),
-  MANAGER_ID      NUMBER(6)
+  MANAGER_ID      NUMBER(6),
+  COUNTRY_ID   CHAR(2)
 );
 alter table DEPARTMENTS add constraint DEPT_ID_PK primary key (DEPARTMENT_ID);
 alter table DEPARTMENTS add constraint DEPT_NAME_NN check ("DEPARTMENT_NAME" IS NOT NULL);
@@ -125,33 +126,33 @@ insert into JOBS (JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY) values ('HR_REP', '
 insert into JOBS (JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY) values ('PR_REP', 'Public Relations Representative', 4500, 10500);
 commit;
 
-insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID) values (10, 'Administration', 200);
-insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID) values (20, 'Marketing', 201);
-insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID) values (30, 'Purchasing', 114);
-insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID) values (40, 'Human Resources', 203);
-insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID) values (50, 'Shipping', 121);
-insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID) values (60, 'IT', 103);
-insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID) values (70, 'Public Relations', 204);
-insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID) values (80, 'Sales', 145);
-insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID) values (90, 'Executive', 100);
-insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID) values (100, 'Finance', 108);
-insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID) values (110, 'Accounting', 205);
-insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID) values (120, 'Treasury', null);
-insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID) values (130, 'Corporate Tax', null);
-insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID) values (140, 'Control And Credit', null);
-insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID) values (150, 'Shareholder Services', null);
-insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID) values (160, 'Benefits', null);
-insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID) values (170, 'Manufacturing', null);
-insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID) values (180, 'Construction', null);
-insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID) values (190, 'Contracting', null);
-insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID) values (200, 'Operations', null);
-insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID) values (210, 'IT Support', null);
-insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID) values (220, 'NOC', null);
-insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID) values (230, 'IT Helpdesk', null);
-insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID) values (240, 'Government Sales', null);
-insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID) values (250, 'Retail Sales', null);
-insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID) values (260, 'Recruiting', null);
-insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID) values (270, 'Payroll', null);
+insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, COUNTRY_ID) values (10, 'Administration', 200, 'BY');
+insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, COUNTRY_ID) values (20, 'Marketing', 201, 'BY');
+insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, COUNTRY_ID) values (30, 'Purchasing', 114, 'BY');
+insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, COUNTRY_ID) values (40, 'Human Resources', 203, 'BY');
+insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, COUNTRY_ID) values (50, 'Shipping', 121, 'BY');
+insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, COUNTRY_ID) values (60, 'IT', 103, 'BY');
+insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, COUNTRY_ID) values (70, 'Public Relations', 204, 'BY');
+insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, COUNTRY_ID) values (80, 'Sales', 145, 'BY');
+insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, COUNTRY_ID) values (90, 'Executive', 100, 'BY');
+insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, COUNTRY_ID) values (100, 'Finance', 108, 'BY');
+insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, COUNTRY_ID) values (110, 'Accounting', 205, 'BY');
+insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, COUNTRY_ID) values (120, 'Treasury', null, 'US');
+insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, COUNTRY_ID) values (130, 'Corporate Tax', null, 'US');
+insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, COUNTRY_ID) values (140, 'Control And Credit', null, 'US');
+insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, COUNTRY_ID) values (150, 'Shareholder Services', null, 'US');
+insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, COUNTRY_ID) values (160, 'Benefits', null, 'US');
+insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, COUNTRY_ID) values (170, 'Manufacturing', null, 'US');
+insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, COUNTRY_ID) values (180, 'Construction', null, 'US');
+insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, COUNTRY_ID) values (190, 'Contracting', null, 'US');
+insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, COUNTRY_ID) values (200, 'Operations', null, 'US');
+insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, COUNTRY_ID) values (210, 'IT Support', null, 'US');
+insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, COUNTRY_ID) values (220, 'NOC', null, 'US');
+insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, COUNTRY_ID) values (230, 'IT Helpdesk', null, 'US');
+insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, COUNTRY_ID) values (240, 'Government Sales', null, 'US');
+insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, COUNTRY_ID) values (250, 'Retail Sales', null, 'US');
+insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, COUNTRY_ID) values (260, 'Recruiting', null, 'US');
+insert into DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, COUNTRY_ID) values (270, 'Payroll', null, 'US');
 commit;
 
 insert into EMPLOYEES (EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
@@ -395,4 +396,5 @@ set feedback on
 set define on
 
 alter table DEPARTMENTS add constraint DEPT_MGR_FK foreign key (MANAGER_ID) references EMPLOYEES (EMPLOYEE_ID);
+alter table DEPARTMENTS add constraint EMP_COUNTRY_FK foreign key (COUNTRY_ID) references COUNTRIES (COUNTRY_ID);
 alter table EMPLOYEES add constraint EMP_MANAGER_FK foreign key (MANAGER_ID) references EMPLOYEES (EMPLOYEE_ID);
